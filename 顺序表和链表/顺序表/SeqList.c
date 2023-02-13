@@ -115,3 +115,51 @@ void SeqListPopFront(SL* ps)
     }
     ps->size--;
 }
+
+
+
+//查找元素的下标位置           -----找不到返回-1
+int SeqListFind(SL* ps,DataType x)
+{
+    int i=-1;
+    for(i=0;i<ps->size;i++)
+    {
+        if(ps->arr[i]==x)
+        {
+            return i;//找到了就返回当前的下标
+        }
+    }
+    return i;//无论是循环没找到，还是数组为空，都会返回-1；
+}
+
+
+
+
+//删除pos位置的值       -----pos代表下标
+void SeqListErase(SL* ps,size_t pos)
+{
+    assert(pos>=0 && pos<ps->size);
+    int i=0;
+    for(i=pos;i<ps->size;i++)
+    {
+        ps->arr[i]=ps->arr[i+1];
+    }
+    ps->size--;
+}
+
+
+
+
+//在指定位置插入数据
+void SeqListInsert(SL* ps,size_t pos,DataType x)
+{
+    assert(pos>=0 && pos<ps->size);//首先还是先检查传入数据的合法性
+    SeqListCheckCapicity(ps);
+    int i=0;
+    for(i=ps->size;i>=pos;i--)
+    {
+        ps->arr[i]=ps->arr[i-1];
+    }
+    ps->arr[pos]=x;
+    ps->size--;
+}

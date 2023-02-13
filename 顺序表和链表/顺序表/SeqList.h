@@ -44,5 +44,9 @@ void SeqListPushFront(SL* ps,DataType x);//头插数据的声明
 
 void SeqListPopFront(SL* ps);//头删数据的声明
 
+int SeqListFind(SL* ps,DataType x);//查找某个元素的值是否在顺序表中
+
+void SeqListErase(SL* ps,size_t pos);//
+
 
 
