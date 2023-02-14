@@ -26,7 +26,7 @@ typedef struct SeqList
 {
     DataType* arr;     //指向动态函数开辟的空间
     size_t size;          //空间中实际保存的元素的个数
-    size_t capicity;      //指向的空间能够保存元素的最大个数
+    size_t capacity;      //指向的空间能够保存元素的最大个数
 }SL;
 
 

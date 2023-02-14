@@ -7,17 +7,17 @@
 
 
 
-//2.动态顺序表的创建
-int main()
-{
-    SL s1;
-    //接下来就是对各种接口的调用
-    SeqListInit(&s1);
-    SeqListPushBack(&s1,1);
-    SeqListPrint(&s1);
-    return 0;
-}
-
-
+////2.动态顺序表的创建
+//int main()
+//{
+//    SL s1;
+//    //接下来就是对各种接口的调用
+//    SeqListInit(&s1);
+//    SeqListPushBack(&s1,1);
+//    SeqListPrint(&s1);
+//    return 0;
+//}
+//
+//
 
 

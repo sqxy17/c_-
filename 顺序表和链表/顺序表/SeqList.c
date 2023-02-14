@@ -7,7 +7,7 @@
 void SeqListInit(SL* ps)
 {
     ps->arr=NULL;//刚创建的顺序表还未保存数据
-    ps->size=ps->capicity=0;//这两个值也为0
+    ps->size=ps->capacity=0;//这两个值也为0
 }
 
 
@@ -19,10 +19,10 @@ void SeqListCheckCapicity(SL* ps)
     int newcapicity;
     //首先判断传入的size和capicity是否相同,相同的情况就要考虑扩容
     //但是这个相同会有两种情况，一种是刚初始化完，另一种是数据已经插满
-    if(ps->size==ps->capicity)
+    if(ps->size==ps->capacity)
     {
-        newcapicity=ps->capicity==0?4:(ps->capicity)*2;   //为空就先创建4个变量，不为空就将原来的空间翻倍       不管前插还是后插
-        ps->capicity=newcapicity;  //既然增容成功就不能是原来的大小了
+        newcapicity=ps->capacity==0?4:(ps->capacity)*2;   //为空就先创建4个变量，不为空就将原来的空间翻倍       不管前插还是后插
+        ps->capacity=newcapicity;  //既然增容成功就不能是原来的大小了
     }
     ps->arr=realloc(ps->arr,sizeof(DataType)*newcapicity);
     if(ps->arr==NULL)
@@ -66,7 +66,7 @@ void SeqListDestory(SL* ps)
 {
     free(ps->arr);
     ps->arr=NULL;
-    ps->size=ps->capicity=0;
+    ps->size=ps->capacity=0;
 }
 
 
@@ -161,5 +161,5 @@ void SeqListInsert(SL* ps,size_t pos,DataType x)
         ps->arr[i]=ps->arr[i-1];
     }
     ps->arr[pos]=x;
-    ps->size--;
+    ps->size++;
 }
