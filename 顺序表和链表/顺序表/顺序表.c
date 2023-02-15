@@ -1,4 +1,4 @@
-#include"SeqList.h"
+//#include"SeqList.h"
 //1.静态顺序表      -----这种顺序表有一定的缺陷，就是容量的大小是固定的
 //静态顺序表的创建
 //SL s1;
