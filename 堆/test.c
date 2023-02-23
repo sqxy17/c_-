@@ -5,17 +5,12 @@
 
 int main(void)
 {
-    srand(time(NULL));
-    int* arr=malloc(sizeof(int)*1000);
-    int i=0;
-    for(i=0;i<1000;i++)
+    int arr[10]={1,5,2,7,9,3,6,12,25,32};
+
+
+    HeapSort(arr,10);
+    for(int i=0;i<10;i++)
     {
-        arr[i]=rand()%10000;
+        printf("%d ",arr[i]);
     }
-    arr[0]=100001;
-    arr[1]=100002;
-    arr[2]=100003;
-    arr[3]=100004;
-    arr[4]=100005;
-    PrintTopK(arr,1000,10);//数组  数组内保存了多少数字   找出前10个最大的数
 }
